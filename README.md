@@ -24,16 +24,15 @@ How to install
 
 First, install the ``btlejack`` Python3 client software with Pip:
 
-::
-
+```
   $ sudo pip3 install btlejack
-
+```
 
 Then, connect your Micro:Bit device to your computer with a USB cable, mount the associated mass storage device (the mount point must contain **MICROBIT**), and issue the following command:
 
-::
-
+```
   $ btlejack -i
+```
 
 This will program every Micro:Bit device connected to your computer, and make
 them ready to use with Btlejack. It will use the correct firmware version for the current client software, so it is highly recommended to perform this firmware installation procedure each time you update Btlejack.
@@ -66,25 +65,23 @@ to work with other nRF51822-based boards, it provides a specific options to allo
 The ``-d`` option lets you specify one or more devices with Btlejack. Note that this option will disable the automatic detection of devices, and you should
 add as many devices as you may need:
 
-::
-
+```
   $ btlejack -d /dev/ttyACM0 -d /dev/ttyACM2 -s
-
-
+```
 
 Sniffing an existing connection
 -------------------------------
 
 First, find an existing connection to target with ``btlejack``:
 
-::
-
+```
   $ btlejack -s
   BtleJack version 1.1
 
   [i] Enumerating existing connections ...
   [ - 54 dBm] 0xcd91d517 | pkts: 1
   [ - 46 dBm] 0xcd91d517 | pkts: 2
+```
 
 - The first value (in dBm) shows the power of the signal, the greater this value is the better the sniffed connection will be.
 
@@ -94,8 +91,7 @@ First, find an existing connection to target with ``btlejack``:
 
 Then, use the ``-f`` option to follow a specific connection:
 
-::
-
+```
   $ btlejack -f 0xdda4845e
   BtleJack version 1.1
 
@@ -112,7 +108,7 @@ Then, use the ``-f`` option to follow a specific connection:
   LL Data: 0a 08 04 00 04 00 0b 5a 69 70
   LL Data: 02 07 03 00 04 00 0a 03 00
   LL Data: 0a 08 04 00 04 00 0b 5a 69 70
-
+```
 
 **If you are using more than 1 microbit, Btlejack will parallelize some of the sniffing operations in order to speed up the connection parametres recovery !**
 
@@ -121,8 +117,7 @@ Sniffing for new connections
 
 The  ``-c`` option supported by ``btlejack`` allows you to specify the target BD address, or you may want to use ``any`` to capture any new connection created.
 
-::
-
+```
   $ btlejack -c any
   BtleJack version 1.1
 
@@ -142,23 +137,22 @@ The  ``-c`` option supported by ``btlejack`` allows you to specify the target BD
   LL Data: 03 09 08 0f 00 00 00 00 00 00 00
   LL Data: 0b 06 0c 08 0f 00 09 41
   LL Data: 03 06 0c 07 1d 00 d3 07
+```
 
 or you may also want to specify the target BD address:
 
-::
-
+```
   $ btlejack -c 03:e1:f0:00:11:22
-
+```
 
 Jamming a connection
 --------------------
 
 Once a connection identified by its *access address*, you can provide jam it by using the ``-j`` option:
 
-::
-
+```
   $ btlejack -f 0x129f3244 -j̀
-
+```
 
 Hijacking a BLE connection
 --------------------------
@@ -167,8 +161,7 @@ Btlejack is also able to hijack an existing connection, use the ``-t`` option to
 
 First, hijack an existing connection:
 
-::
-
+```
   $ btlejack -f 0x9c68fd30 -t -m 0x1fffffffff
   BtleJack version 1.1
 
@@ -184,6 +177,7 @@ First, hijack an existing connection:
   [i] Synchronized, hijacking in progress ...
   [i] Connection successfully hijacked, it is all yours \o/
   btlejack>
+```
 
 Then use the following commands to interact with the device:
 - **discover**: performs services and characteristics enumeration, will give you all the information about services and characteristics
@@ -196,8 +190,7 @@ Then use the following commands to interact with the device:
 
 The ``discover`` command will send and receive Bluetooth LE packets and retrieve all the services UUIDs and parameters, as well as characteristics UUIDs and parameters:
 
-::
-
+```
   btlejack> discover
   start: 0001 end: 0005
   start: 0014 end: 001a
@@ -230,26 +223,26 @@ The ``discover`` command will send and receive Bluetooth LE packets and retrieve
      | handle: 0029
      | properties: write indicate  (28)
      \ value handle: 002a
+```
 
 *read* command
 ^^^^^^^^^^^^^^
 
 The ``read`` command accepts a single parameter, the value handle corresponding to the characteristic you want to read from:
 
-::
-
+```
   btlejack> read 0x16
   read>> 4c 47 20 77 65 62 4f 53 20 54 56
+```
 
 *write* command
 ^^^^^^^^^^^^^^^
 
 The ``write`` command accepts three parameters:
 
-::
-
+```
   btlejack> write <value handle> <data format> <data>
-
+```
 
 Supported data formats:
 
@@ -275,19 +268,17 @@ Btlejack supports the following DLT formats:
 
 The output file may be specified using the `-o` option, while the output format may be specified with the `-x` option. Valid formats values are: `ll_phdr`, `nordic`, or `pcap` (default).
 
-::
-
+```
   $ btlejack -f 0xac56bc12 -x nordic -o capture.nordic.pcap
-
+```
 
 The ``ll_phdr`` export type is useful when sniffing an encrypted connection, as it is also supported by `crackle <https://github.com/mikeryan/crackle>`_. So if you want to sniff and break encrypted connections, this is the way to go.
 
 You may also need to tell crackle to use a specific cracking strategy, by using the `-s` option:
 
-::
-
+```
   $ crackle -i some.pcap -s 1
-
+```
 
 Connection cache
 ----------------
@@ -298,9 +289,9 @@ been previously seen.
 
 This cache can be flushed with the ``-z`` option:
 
-::
-
+```
   $ btlejack -z
+```
 
 Dumping live packets with Wireshark
 -----------------------------------
@@ -308,15 +299,15 @@ Dumping live packets with Wireshark
 Btlejack 2.0 introduces a new *-w* option that allows you to specify a FIFO path (existing or not) in order
 to perform packets live analysis:
 
-::
-
+```
   $ btlejack -c any -w /tmp/blepipe
+```
 
 You can even use a FIFO and an output file as the same time:
 
-::
-
+```
   $ btlejack -c any -w /tmp/blepipe -o blepackets.pcap
+```
 
 Hint for using btlejack on a Raspberry Pi
 -----------------------------------------
@@ -343,24 +334,23 @@ Sniffing an existing BLE 5 connection (that uses the 1Mbps uncoded PHY, and only
 that you want to target a BLE 5 connection, by using the *-5* option. Please note that there is no way to tell if an existing connection
 uses CSA #2 or CSA #1, so you have to try both techniques until one works.
 
-::
-
+```
   $ btlejack -f 0x11223344 -5
+```
 
 Btlejack will then recover the channel map used and then the hop interval value:
 
-::
-
+```
   $ btlejack -f 0x11223344 -5
   [i] Synchronizing with connection 0x11223344 ...
   ✓ CRCInit: 0x40d64f
   ✓ Channel Map = 0x1fffffffff
   ✓ Hop interval = 160
+```
 
 It will then try to recover this connection PRNG counter value:
 
-::
-
+```
   $ btlejack -f 0x11223344 -5
   [i] Synchronizing with connection 0x11223344 ...
   ✓ CRCInit: 0x40d64f
@@ -368,6 +358,7 @@ It will then try to recover this connection PRNG counter value:
   ✓ Hop interval = 160
   ✓ CSA2 PRNG counter = 5137
   [i] Synchronized, packet capture in progress ...
+```
 
 Once done, Btlejack is synchronized with this connection and will process packets
 as usual.
