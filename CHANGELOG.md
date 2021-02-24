@@ -1,3 +1,5 @@
+# CHANGE LOG
+
 <h3>version 2.0</h3>
 
 * Added support for BLE 5 1Mbps Uncoded PHY with CSA2
