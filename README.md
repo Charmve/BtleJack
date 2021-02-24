@@ -378,3 +378,7 @@ time-sensitive. My BLE 5 devices use a latency of 0, thus allowing no delay and
 causing this attack to fail.
 
 When I will get my hands on some legitimate BLE 5 devices, I will improve this.
+
+<br>
+<p align="center"><img border=0 src="blehack.jpg"><br></p>
+<br>
