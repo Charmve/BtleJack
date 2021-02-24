@@ -1,4 +1,4 @@
-version 2.0
+<button>version 2.0</button>
 
 * Added support for BLE 5 1Mbps Uncoded PHY with CSA2
 * Added a new option (-w) to allow live analysis with wireshark through FIFO (issue #39)
