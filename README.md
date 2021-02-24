@@ -1,6 +1,6 @@
 <div align=center>
   <img src="defcon16.jpg">
-  <br>[<a href="https://hackaday.com/tag/btlejack/" target="_blank">HACKADAY</a> | <a href="https://www.freebuf.com/sectool/214427.html" target="_blank">Chinese Analyze</a>
+  <br>[<a href="https://hackaday.com/tag/btlejack/" target="_blank">HACKADAY</a>] | [<a href="https://www.freebuf.com/sectool/214427.html" target="_blank">Chinese Analyze</a>]
 </div>
 
 # BtleJack: a new Bluetooth Low Energy swiss-army knife
