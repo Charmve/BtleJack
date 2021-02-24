@@ -87,7 +87,7 @@ First, find an existing connection to target with ``btlejack``:
 
 - The last value is the number of packets seen with this *access address*. The higher this value is, the more probable the corresponding *access address* is used.
 
-Then, use the `-f` option to follow a specific connection:
+Then, use the ``-f`` option to follow a specific connection:
 
 ::
 
