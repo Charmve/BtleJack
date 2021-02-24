@@ -1,4 +1,8 @@
-<div align=center><img src="https://hackaday.com/2019/08/10/new-bluetooth-5-channel-hopping-reverse-engineered-for-jamming-and-hijacking/"></div>
+<div align=center>
+  <img src="defcon16.jpg">
+  <p>[HACKADAY](https://hackaday.com/tag/btlejack/) | [Chinese Analyze](https://www.freebuf.com/sectool/214427.html)
+  </p>
+</div>
 
 BtleJack: a new Bluetooth Low Energy swiss-army knife
 #####################################################
