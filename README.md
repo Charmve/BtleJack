@@ -5,8 +5,8 @@
 
 # BtleJack: a new Bluetooth Low Energy swiss-army knife
 
-Btlejack provides everything you need to sniff, jam and hijack Bluetooth Low Energy devices. It relies on one or more `BBC Micro:Bit <http://microbit.org/>`_. devices running a dedicated firmware. You may also
-want to use an `Adafruit's Bluefruit LE sniffer <https://www.adafruit.com/product/2269>`_ or a `nRF51822 Eval Kit <https://www.waveshare.com/wiki/BLE400>`_, as we added support for these devices.
+Btlejack provides everything you need to sniff, jam and hijack Bluetooth Low Energy devices. It relies on one or more [BBC Micro:Bit](http://microbit.org/). devices running a dedicated firmware. You may also
+want to use an [Adafruit's Bluefruit LE sniffer](https://www.adafruit.com/product/2269) or a [nRF51822 Eval Kit](https://www.waveshare.com/wiki/BLE400), as we added support for these devices.
 
 Current version of this tool (2.0) supports BLE 4.x and 5.x. The BLE 5.x support is limited, as it does only support the 1Mbps Uncoded PHY and does not support channel map updates.
 
@@ -36,7 +36,7 @@ Then, connect your Micro:Bit device to your computer with a USB cable, mount the
 This will program every Micro:Bit device connected to your computer, and make
 them ready to use with Btlejack. It will use the correct firmware version for the current client software, so it is highly recommended to perform this firmware installation procedure each time you update Btlejack.
 
-If you are using a *Bluefruit LE sniffer* or a *nRF51822 Eval Kit*, then please use an external SWD programmer to flash your device with `this firmware <https://github.com/virtualabs/btlejack-firmware/raw/master/dist/btlejack-firmware-ble400.hex>`_.
+If you are using a *Bluefruit LE sniffer* or a *nRF51822 Eval Kit*, then please use an external SWD programmer to flash your device with [this firmware](https://github.com/virtualabs/btlejack-firmware/raw/master/dist/btlejack-firmware-ble400.hex).
 
 Keep your devices connected and you're all set !
 
@@ -271,7 +271,7 @@ The output file may be specified using the `-o` option, while the output format 
   $ btlejack -f 0xac56bc12 -x nordic -o capture.nordic.pcap
 ```
 
-The ``ll_phdr`` export type is useful when sniffing an encrypted connection, as it is also supported by `crackle <https://github.com/mikeryan/crackle>`_. So if you want to sniff and break encrypted connections, this is the way to go.
+The ``ll_phdr`` export type is useful when sniffing an encrypted connection, as it is also supported by [crackle](https://github.com/mikeryan/crackle). So if you want to sniff and break encrypted connections, this is the way to go.
 
 You may also need to tell crackle to use a specific cracking strategy, by using the `-s` option:
 
