@@ -81,11 +81,11 @@ First, find an existing connection to target with ``btlejack``:
   [ - 54 dBm] 0xcd91d517 | pkts: 1
   [ - 46 dBm] 0xcd91d517 | pkts: 2
 
-The first value (in dBm) shows the power of the signal, the greater this value is the better the sniffed connection will be.
+- The first value (in dBm) shows the power of the signal, the greater this value is the better the sniffed connection will be.
 
-The second value (hex) is the associated *access address*, a 32-bit value identifying a link between two bluetooth low energy compatible devices.
+- The second value (hex) is the associated *access address*, a 32-bit value identifying a link between two bluetooth low energy compatible devices.
 
-The last value is the number of packets seen with this *access address*. The higher this value is, the more probable the corresponding *access address* is used.
+- The last value is the number of packets seen with this *access address*. The higher this value is, the more probable the corresponding *access address* is used.
 
 Then, use the `-f` option to follow a specific connection:
 
