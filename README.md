@@ -184,8 +184,7 @@ Then use the following commands to interact with the device:
 - **read**: read data from a specific value handle
 - **ll**: sends a raw link-layer packet (for ninjas)
 
-*discover* command
-^^^^^^^^^^^^^^^^^^
+### *discover* command
 
 The ``discover`` command will send and receive Bluetooth LE packets and retrieve all the services UUIDs and parameters, as well as characteristics UUIDs and parameters:
 
@@ -224,8 +223,7 @@ The ``discover`` command will send and receive Bluetooth LE packets and retrieve
      \ value handle: 002a
 ```
 
-*read* command
-^^^^^^^^^^^^^^
+### *read* command
 
 The ``read`` command accepts a single parameter, the value handle corresponding to the characteristic you want to read from:
 
@@ -234,8 +232,8 @@ The ``read`` command accepts a single parameter, the value handle corresponding 
   read>> 4c 47 20 77 65 62 4f 53 20 54 56
 ```
 
-*write* command
-^^^^^^^^^^^^^^^
+### *write* command
+
 
 The ``write`` command accepts three parameters:
 
@@ -248,8 +246,7 @@ Supported data formats:
 - ``hex``: hex data (i.e. "414261")
 - ``str``: text string, may be encapsulated in double quotes
 
-*ll* command
-^^^^^^^^^^^^
+### *ll* command
 
 This last command allows you to send Bluetooth Low Energy Link-layer PDUs, in hex form, as specified in Volume 6, Part B, Chapter 2.4.
 
